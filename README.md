@@ -1,4 +1,4 @@
-# colx
+# Colx
 
 Library with constants and functions for working with colors
 

@@ -1,5 +1,5 @@
 [project]
-name = "colx"
+name = "colex"
 dynamic = ["version"]
 description = "Library with constants and functions for working with colors"
 authors = [
@@ -19,10 +19,10 @@ managed = true
 dev-dependencies = []
 
 [tool.hatch.version]
-path = "colx/__init__.py"
+path = "colex/__init__.py"
 
 [tool.hatch.metadata]
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["colx"]
+packages = ["colex"]

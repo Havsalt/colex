@@ -11,15 +11,17 @@ Includes:
 - `hex_color`
 - `rand_color`
 - `rgb_color`
+- `NONE` (placeholder, empty string)
+- `RESET` (reset ansi codes)
+- Styling codes (use `[color] + [style]`, `NOTE: some styling codes are not widely supported`)
 - 8-bit colors
 - 16-bit colors
-- Styling constants (use `[color] + [style]`)
 - HTML color constants
 """
 
 from __future__ import annotations as _annotations
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __all__ = [
     # annotations
     "ColorValue",
@@ -29,7 +31,20 @@ __all__ = [
     "hex_color",
     "rand_color",
     "rgb_color",
-    # constants
+    # placeholder (empty string)
+    "NONE",
+    # ansi reset
+    "RESET",
+    # styling
+    "BOLD",
+    "FAINT",
+    "UNDERLINE",
+    "BLINK",
+    "RAPID_BLINK",
+    "REVERSE",
+    "CONCEAL",
+    "STRIKETHROUGH",
+    # color constants
     "ALICE_BLUE",
     "ANTIQUE_WHITE",
     "AQUA",
@@ -41,7 +56,6 @@ __all__ = [
     "BLANCHED_ALMOND",
     "BLUE",
     "BLUE_VIOLET",
-    "BOLD",
     "BRIGHT_BLACK",
     "BRIGHT_BLUE",
     "BRIGHT_CYAN",
@@ -153,8 +167,6 @@ __all__ = [
     "POWDER_BLUE",
     "PURPLE",
     "RED",
-    "RESET",
-    "REVERSE",
     "ROSY_BROWN",
     "ROYAL_BLUE",
     "SADDLE_BROWN",
@@ -170,13 +182,11 @@ __all__ = [
     "SNOW",
     "SPRING_GREEN",
     "STEEL_BLUE",
-    "STRIKETHROUGH",
     "TAN",
     "TEAL",
     "THISTLE",
     "TOMATO",
     "TURQUOISE",
-    "UNDERLINE",
     "VIOLET",
     "WHEAT",
     "WHITE",
@@ -360,13 +370,21 @@ def rand_color(fg: bool = True, bg: bool = False, *, bold: bool = False, reverse
     return value
 
 
+# placeholder for no color, does not reset ansi color
+NONE: ColorValue = ""
+
 # reset code
 RESET = "\x1b[0m"
 
 # modes
 BOLD          = "\x1b[1m"
+FAINT         = "\x1b[2m"
+ITALIC        = "\x1b[3m"
 UNDERLINE     = "\x1b[4m"
+BLINK         = "\x1b[5m"
+RAPID_BLINK   = "\x1b[6m"
 REVERSE       = "\x1b[7m"
+CONCEAL       = "\x1b[8m"
 STRIKETHROUGH = "\x1b[9m"
 
 # standard colors:

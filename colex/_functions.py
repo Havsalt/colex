@@ -42,29 +42,6 @@ def from_ansi(
     return color
 
 
-def from_rgb(
-    red: int = 0,
-    green: int = 0,
-    blue: int = 0,
-    *,
-    background: bool = False,
-) -> ColorValue:
-    """Creates a color from the given channels, which is red, green and blue. Can be given both a foreground color and background color
-
-    Args:
-        red (int, optional): red color channel. Defaults to 0.
-        green (int, optional): green color channel. Defaults to 0.
-        blue (int, optional): blue color channel. Defaults to 0.
-        background (bool, optional): colors background instead of foreground. Defaults to False.
-
-    Returns:
-        ColorValue: ANSI color code as str
-    """
-    layer = 38 if not background else 48
-    color = "\x1b[{};2;{};{};{}m".format(layer, red, green, blue)
-    return color
-
-
 def from_hex(
     foreground: HexCode = "#ffffff",
     background: HexCode | None = None,
@@ -140,4 +117,27 @@ def from_random(
             random.randint(0, 255),
             random.randint(0, 255),
         )
+    return color
+
+
+def from_rgb(
+    red: int = 0,
+    green: int = 0,
+    blue: int = 0,
+    *,
+    background: bool = False,
+) -> ColorValue:
+    """Creates a color from the given channels, which is red, green and blue. Can be given both a foreground color and background color
+
+    Args:
+        red (int, optional): red color channel. Defaults to 0.
+        green (int, optional): green color channel. Defaults to 0.
+        blue (int, optional): blue color channel. Defaults to 0.
+        background (bool, optional): colors background instead of foreground. Defaults to False.
+
+    Returns:
+        ColorValue: ANSI color code as str
+    """
+    layer = 38 if not background else 48
+    color = "\x1b[{};2;{};{};{}m".format(layer, red, green, blue)
     return color

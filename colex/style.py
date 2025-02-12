@@ -1,3 +1,15 @@
+__all__ = (
+    "BOLD",
+    "FAINT",
+    "ITALIC",
+    "UNDERLINE",
+    "BLINK",
+    "RAPID_BLINK",
+    "REVERSE",
+    "CONCEAL",
+    "STRIKETHROUGH",
+)
+
 BOLD = "\x1b[1m"
 FAINT = "\x1b[2m"
 ITALIC = "\x1b[3m"

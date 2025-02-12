@@ -40,9 +40,7 @@ def from_ansi(
         ColorValue: ANSI color code as str
     """
     if foreground is None and background is None:
-        raise ValueError(
-            "Both param 'foreground' and 'background' was `None`"
-        )
+        raise ValueError("Both param 'foreground' and 'background' was `None`")
     color = ""
     if foreground is not None:
         color += f"\x1b[38;5;{foreground}m"

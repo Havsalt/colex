@@ -77,7 +77,9 @@ class Color:
     color: ColorValue = colex.RED
 ```
 
-Having a different namespace was nice, but the main advantage was having `colex` on `PyPI`. This way, I didn't need to copy over a `color.py` file everytime, but I could instead just install it using the desired package manager. It also became easier to develop `charz`, as the color aspect was split into it's own package.
+Having a different namespace was nice, but the main advantage was having `colex` on `PyPI`. This way, I didn't need to copy over a `color.py` file everytime, but I could instead just install it using the desired package manager.
+
+It also became easier to develop `charz`, as the color aspect was split into it's own package.
 
 ## Includes
 

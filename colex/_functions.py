@@ -21,7 +21,7 @@ def colorize(
 
 
 def from_ansi(
-    foreground: ColorCode = 7,
+    foreground: ColorCode | None = None,
     background: ColorCode | None = None,
 ) -> ColorValue:
     """Creates a color from the given color code. Can be given both a foreground color and background color
@@ -30,13 +30,22 @@ def from_ansi(
     when comparing using the `==` operator, as their string representations will be different
 
     Args:
-        foreground (ColorCode, optional): foreground color. Defaults to 7.
+        foreground (ColorCode | None, optional): foreground color. Defaults to None.
         background (ColorCode | None, optional): background color. Defaults to None.
+
+    Raises:
+        ValueError: both `foreground` and `background` was set to be None
 
     Returns:
         ColorValue: ANSI color code as str
     """
-    color = f"\x1b[38;5;{foreground}m"
+    if foreground is None and background is None:
+        raise ValueError(
+            "Both param 'foreground' and 'background' was `None`"
+        )
+    color = ""
+    if foreground is not None:
+        color += f"\x1b[38;5;{foreground}m"
     if background is not None:
         color += f"\x1b[48;5;{background}m"
     return color

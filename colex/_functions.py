@@ -40,7 +40,7 @@ def from_ansi(
         ColorValue: ANSI color code as str
     """
     if foreground is None and background is None:
-        raise ValueError("Both param 'foreground' and 'background' was `None`")
+        raise ValueError("both param 'foreground' and 'background' was `None`")
     color = ""
     if foreground is not None:
         color += f"\x1b[38;5;{foreground}m"
@@ -110,7 +110,7 @@ def from_random(
         ColorValue: ANSI color code as str
     """
     if not foreground and not background:
-        raise ValueError("Either param 'foreground' or 'background' has to be True")
+        raise ValueError("either param 'foreground' or 'background' has to be True")
     color = ""
     if foreground:
         color += "\x1b[38;2;{};{};{}m".format(

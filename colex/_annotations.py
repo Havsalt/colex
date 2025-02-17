@@ -1,11 +1,6 @@
-from typing import TypeAlias, Protocol
+from typing import TypeAlias
 
 
-class ColorValue(Protocol):
-    """General color annotation, using `__str__` protocol"""
-
-    def __str__(self) -> str: ...
-
-
+ColorValue: TypeAlias = str
 ColorCode: TypeAlias = int | str
 HexCode: TypeAlias = str

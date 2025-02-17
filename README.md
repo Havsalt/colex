@@ -38,21 +38,6 @@ from colex import ColorValue
 
 my_color: ColorValue = "\x1b[31m"  # The ANSI code for red
 print(my_color + "Hello red, again")
-
-# `ColorValue` is both an annotation and protocol
-# This is to support custom 3rd party classes that implements `__str__`
-class Color:
-    def __init__(self, code: int) -> int:
-        self.code = code
-
-    def __str__(self) -> str:
-        return colex.from_ansi(code)
-
-yellow_color: ColorValue = Color(33)  # Code for Yellow
-color_string = str(yellow_color)  # Implements proper `__str__`
-# You may call either `colorize` or explicit str(...) like this
-print(colorize("Hello yellow", yellow_color))
-print(str(yellow_color) + "Hello yellow" + RESET)
 ```
 
 ## Rational

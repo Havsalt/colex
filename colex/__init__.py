@@ -204,6 +204,7 @@ __all__ = (
     "YELLOW_GREEN",
 )
 
+from . import color, style
 from ._annotations import (
     ColorValue,
     ColorCode,
@@ -220,8 +221,7 @@ from ._special import (
     NONE,
     RESET,
 )
-import style
-from style import (
+from .style import (
     BLINK,
     BOLD,
     CONCEAL,
@@ -232,7 +232,6 @@ from style import (
     STRIKETHROUGH,
     UNDERLINE,
 )
-import color
 from .color import (
     ALICE_BLUE,
     ANTIQUE_WHITE,

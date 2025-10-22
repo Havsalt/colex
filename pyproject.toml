@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "colex"
-version = "0.3.1"
+version = "0.3.2"
 description = "Library with constants and functions for working with colors"
 authors = [
     { name = "Havsalt", email = "77575424+Havsalt@users.noreply.github.com" }

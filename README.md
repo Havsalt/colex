@@ -94,6 +94,10 @@ It also became easier to develop `charz`, as the color aspect was split into it'
     - `REVERSE`
     - `CONCEAL`
     - `STRIKETHROUGH`
+  
+## Versioning
+
+`colex` uses [SemVer](https://semver.org), according to [The Cargo Book](https://doc.rust-lang.org/cargo/reference/semver.html).
 
 ## License
 
